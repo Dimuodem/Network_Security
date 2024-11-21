@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Security Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-container">
+        <h1>Campus Security Management</h1>
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2>Login</h2>
+            <form id="login" onsubmit="loginUser(event)">
+                <label for="login-name">Name:</label>
+                <input type="text" id="login-name" required>
+                
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="register-form">
+            <h2>Register</h2>
+            <form id="register" onsubmit="registerUser(event)">
+                <label for="register-name">Name:</label>
+                <input type="text" id="register-name" required>
+
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" required>
+
+                <label for="register-role">Role:</label>
+                <select id="register-role" required>
+                    <option value="Student">Student</option>
+                    <option value="Admin">Admin</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <!-- Role-Based Actions -->
+        <div id="role-actions" style="display:none;">
+            <h2>Welcome!</h2>
+            <button onclick="showIssueForm()">Report an Issue</button>
+            <button onclick="showSuggestionForm()">Submit a Suggestion</button>
+        </div>
+
+        <!-- Issue Form -->
+        <div id="issue-form" style="display:none;">
+            <h2>Report an Issue</h2>
+            <form id="submit-issue" onsubmit="submitIssue(event)">
+                <label for="issue-description">Describe your issue:</label>
+                <textarea id="issue-description" required></textarea>
+                <button type="submit">Submit Issue</button>
+            </form>
+        </div>
+
+        <!-- Suggestion Form -->
+        <div id="suggestion-form" style="display:none;">
+            <h2>Submit a Suggestion</h2>
+            <form id="submit-suggestion" onsubmit="submitSuggestion(event)">
+                <label for="suggestion-description">Enter your suggestion:</label>
+                <textarea id="suggestion-description" required></textarea>
+                <button type="submit">Submit Suggestion</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
